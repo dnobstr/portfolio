@@ -1,0 +1,228 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ============================================================================
+   GNOME Shell & Libadwaita Semantic Design Tokens
+   ============================================================================ */
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Shell chrome (GNOME Shell remains crisp charcoal/black across light & dark) */
+  --shell-panel-bg: #000000;
+  --shell-panel-fg: #ffffff;
+  --shell-panel-hover: rgba(255, 255, 255, 0.14);
+  --shell-panel-active: rgba(255, 255, 255, 0.22);
+  --shell-popover-bg: rgba(34, 34, 36, 0.94);
+  --shell-popover-border: rgba(255, 255, 255, 0.12);
+  --shell-dock-bg: rgba(26, 26, 28, 0.8);
+  --shell-dock-border: rgba(255, 255, 255, 0.12);
+
+  /* Libadwaita Dark Application Surfaces */
+  --adw-window-bg: #242424;
+  --adw-view-bg: #1e1e1e;
+  --adw-sidebar-bg: #2a2a2a;
+  --adw-header-bg: #303030;
+  --adw-header-unfocused: #282828;
+  --adw-card-bg: #323232;
+  --adw-card-hover: #3a3a3a;
+  --adw-input-bg: #1d1d1d;
+  --adw-pill-bg: rgba(255, 255, 255, 0.09);
+  --adw-pill-hover: rgba(255, 255, 255, 0.15);
+  --adw-border: rgba(255, 255, 255, 0.1);
+  --adw-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Text hierarchy (all >= 4.5:1 against dark surfaces) */
+  --adw-fg: #ffffff;
+  --adw-fg-secondary: rgba(255, 255, 255, 0.76);
+  --adw-fg-muted: rgba(255, 255, 255, 0.58);
+
+  /* Status colors */
+  --adw-success: #57e389;
+  --adw-warning: #f8e45c;
+  --adw-destructive: #e01b24;
+  --adw-destructive-hover: #f66151;
+
+  /* Window elevation shadows */
+  --adw-window-shadow: 0 22px 54px -12px rgba(0, 0, 0, 0.68), 0 4px 16px rgba(0, 0, 0, 0.36);
+  --adw-window-shadow-unfocused: 0 12px 30px -10px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+
+  /* Default GNOME Accent (Blue) */
+  --adw-accent: #3584e4;
+  --adw-accent-hover: #4a93eb;
+  --adw-accent-fg: #ffffff;
+  --adw-accent-soft: rgba(53, 132, 228, 0.18);
+  --adw-accent-ring: rgba(98, 160, 234, 0.55);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Libadwaita Light Application Surfaces */
+  --adw-window-bg: #fafafa;
+  --adw-view-bg: #ffffff;
+  --adw-sidebar-bg: #f2f2f4;
+  --adw-header-bg: #ebebee;
+  --adw-header-unfocused: #f5f5f7;
+  --adw-card-bg: #ffffff;
+  --adw-card-hover: #f4f5f7;
+  --adw-input-bg: #ffffff;
+  --adw-pill-bg: rgba(0, 0, 0, 0.06);
+  --adw-pill-hover: rgba(0, 0, 0, 0.11);
+  --adw-border: rgba(0, 0, 0, 0.1);
+  --adw-border-strong: rgba(0, 0, 0, 0.18);
+
+  /* Text hierarchy (all >= 4.5:1 against light surfaces) */
+  --adw-fg: #1d1e20;
+  --adw-fg-secondary: #494d54;
+  --adw-fg-muted: #60656e;
+
+  --adw-success: #1f7a44;
+  --adw-warning: #9a6700;
+  --adw-destructive: #c01c28;
+  --adw-destructive-hover: #a51d2d;
+
+  --adw-window-shadow: 0 22px 54px -12px rgba(0, 0, 0, 0.3), 0 4px 14px rgba(0, 0, 0, 0.14);
+  --adw-window-shadow-unfocused: 0 10px 26px -10px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Official GNOME 47+ Accent Palettes (tuned for accessible white text on fills) */
+[data-accent='blue'] {
+  --adw-accent: #2c78d6;
+  --adw-accent-hover: #3584e4;
+  --adw-accent-soft: rgba(53, 132, 228, 0.18);
+  --adw-accent-ring: rgba(98, 160, 234, 0.55);
+}
+
+[data-accent='teal'] {
+  --adw-accent: #1d7f91;
+  --adw-accent-hover: #2190a4;
+  --adw-accent-soft: rgba(33, 144, 164, 0.18);
+  --adw-accent-ring: rgba(91, 200, 175, 0.55);
+}
+
+[data-accent='green'] {
+  --adw-accent: #2d7d46;
+  --adw-accent-hover: #3a944a;
+  --adw-accent-soft: rgba(58, 148, 74, 0.18);
+  --adw-accent-ring: rgba(87, 227, 137, 0.5);
+}
+
+[data-accent='orange'] {
+  --adw-accent: #c44c00;
+  --adw-accent-hover: #de5700;
+  --adw-accent-soft: rgba(237, 91, 0, 0.18);
+  --adw-accent-ring: rgba(255, 148, 77, 0.55);
+}
+
+[data-accent='red'] {
+  --adw-accent: #cc2436;
+  --adw-accent-hover: #e62d42;
+  --adw-accent-soft: rgba(230, 45, 66, 0.18);
+  --adw-accent-ring: rgba(246, 97, 81, 0.55);
+}
+
+[data-accent='purple'] {
+  --adw-accent: #813d9c;
+  --adw-accent-hover: #9141ac;
+  --adw-accent-soft: rgba(145, 65, 172, 0.2);
+  --adw-accent-ring: rgba(192, 97, 203, 0.55);
+}
+
+[data-accent='slate'] {
+  --adw-accent: #55687a;
+  --adw-accent-hover: #677d91;
+  --adw-accent-soft: rgba(111, 131, 150, 0.2);
+  --adw-accent-ring: rgba(148, 169, 189, 0.55);
+}
+
+/* ============================================================================
+   Base Browser Surfaces (Selection, Caret, Focus Rings, Scrollbars)
+   ============================================================================ */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  caret-color: var(--adw-accent);
+}
+
+::selection {
+  background-color: var(--adw-accent);
+  color: var(--adw-accent-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--adw-accent-ring);
+  outline-offset: 2px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sleek Libadwaita overlay-style scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--adw-border-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--adw-border-strong);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--adw-fg-muted);
+}
+
+/* Utility classes mapping Adwaita tokens for clean component composition */
+.adw-window {
+  background-color: var(--adw-window-bg);
+  color: var(--adw-fg);
+  border: 1px solid var(--adw-border);
+}
+
+.adw-surface {
+  background-color: var(--adw-card-bg);
+  border: 1px solid var(--adw-border);
+}
+
+.adw-input {
+  background-color: var(--adw-input-bg);
+  color: var(--adw-fg);
+  border: 1px solid var(--adw-border-strong);
+}
+
+.adw-input::placeholder {
+  color: var(--adw-fg-muted);
+}
+
+.adw-input:focus {
+  border-color: var(--adw-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--adw-accent-soft);
+}

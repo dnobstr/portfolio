@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14233c"/>
+      <stop offset="48%" stop-color="#1d3861"/>
+      <stop offset="100%" stop-color="#0f1829"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="28%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#3584e4" stop-opacity="0.46"/>
+      <stop offset="100%" stop-color="#3584e4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="76%" cy="74%" r="52%">
+      <stop offset="0%" stop-color="#2190a4" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#2190a4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ribbon1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#62a0ea" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#3584e4" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#1a5fb4" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="ribbon2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5bc8af" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#1c71d8" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow1)"/>
+  <rect width="1920" height="1080" fill="url(#glow2)"/>
+  <path d="M-120 780 C 320 520, 680 960, 1180 620 C 1520 390, 1740 460, 2060 320 L 2060 1160 L -120 1160 Z" fill="url(#ribbon1)"/>
+  <path d="M-160 440 C 260 220, 740 620, 1260 300 C 1580 100, 1820 180, 2080 60 L 2080 540 C 1720 680, 1460 560, 1140 760 C 660 1060, 240 680, -160 880 Z" fill="url(#ribbon2)"/>
+  <path d="M0 900 C 480 720, 960 980, 1480 760 C 1700 665, 1840 680, 1960 640 L 1960 1120 L 0 1120 Z" fill="#0b1322" fill-opacity="0.45"/>
+</svg>
