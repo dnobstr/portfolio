@@ -226,3 +226,19 @@ body,
   outline: none;
   box-shadow: 0 0 0 2px var(--adw-accent-soft);
 }
+
+.shell-popover {
+  background-color: var(--shell-popover-bg);
+  color: var(--shell-panel-fg);
+  border: 1px solid var(--shell-popover-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.shell-dock {
+  background-color: var(--shell-dock-bg);
+  color: var(--shell-panel-fg);
+  border: 1px solid var(--shell-dock-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}

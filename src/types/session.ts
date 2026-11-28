@@ -18,8 +18,17 @@ export type AccentColorId =
   | 'purple'
   | 'slate';
 
+export type WidgetThemeId =
+  | 'adwaita'
+  | 'kde-glass'
+  | 'terminal'
+  | 'conky'
+  | 'nordic';
+
 export interface ThemePreferences {
   mode: ThemeMode;
   accent: AccentColorId;
   animationsEnabled: boolean;
+  widgetTheme: WidgetThemeId;
+  showSystemWidget: boolean;
 }
